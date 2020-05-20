@@ -20,28 +20,21 @@ La société veut pouvoir rechercher typiquement les configurations en fonction 
  Livrables v1 
 <br>
 
-- README (avec les noms des membres du groupe) | date de rendu : 22/03/2020
-- Analyse du besoin de l’utilisateur - Note de clarification | date de rendu : 29/03/2020
-- MCD | date de rendu : 05/04/2020
-- MLD relationnel | date de rendu : 05/04/2020
-- La base de données : tables, données de test, questions attendues | date de rendu : 05/04/2020
-- Application Python | date de rendu : 05/04/2020
+- Analyse du besoin de l’utilisateur - Note de clarification | date de rendu : 25/05/2020
+- MCD | date de rendu : 25/05/2020
+- MLD relationnel | date de rendu : 01/06/2020
+- SQL CREATE | date de rendu : 01/06/2020
+- SQL INSERT | date de rendu : 01/06/2020
+- SQL SELECT | date de rendu : 08/06/2020
 
 Livrables v2 
 <br>
 
-- Actualisation - Note de clarification | date de rendu : NC
-- MCD | date de rendu : NC
-- MLD relationnel | date de rendu : NC
-- La base de données  : tables et vues, données de test, questions attendues (vues) | date de rendu : NC
-- Application Python | date de rendu : NC
+- Révision complète du projet | date de rendu : 15/06/2020
 
+Je reprendrais l'ensemble de mon projet afin :
 
-Nous reprendrons l'ensemble de notre projet afin :
-
-*De corriger les erreurs relevées dans la v2 <br>
-De refaire notre conception afin d'intégrer : héritage, contraintes, composition, vues, requêtes statistiques (agrégats), normalisation, transaction et optimisation<br>
-De l'augmenter de nouvelles fonctions (+25%)*
+*De corriger les erreurs relevées dans la v1 <br>
 
 <hr>
 
