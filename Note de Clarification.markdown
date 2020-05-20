@@ -45,38 +45,35 @@ On cherche à représenter les différents objets au sein d'une base de données
 Les differents objets qu'on veut répresenter sont:
 
 * Les équipements
+* Les fournisseurs
+* Les localités
 * 
 * 
-* 
-* 
 
 
-<h4>  </h4> <br> 
+<h4> L'équipement </h4> <br> 
 
-- 
-- 
-- 
-- 
-- 
-
-<h4>  </h4> <br> 
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- Numéro de série
+- nature
+- type
 
 
 
-<h4>  </h4> <br> 
+<h4> Le fournisseur </h4> <br> 
 
-- 
-- 
--
-- 
+- Code
+- Nom
+- Numéro de téléphone
+- Adresse email
+
+
+
+<h4> La localité </h4> <br> 
+
+- Numéro
+- Rue
+-Code postal
+- Nom de ville
 - 
 - 
 - 
