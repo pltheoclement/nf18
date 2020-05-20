@@ -32,9 +32,7 @@ Livrables v2
 
 - Révision complète du projet | date de rendu : 15/06/2020
 
-Je reprendrais l'ensemble de mon projet afin :
-
-*De corriger les erreurs relevées dans la v1 <br>
+Je reprendrais l'ensemble de mon projet afin de corriger les erreurs relevées dans la v1 <br>
 
 <hr>
 
@@ -42,11 +40,11 @@ Je reprendrais l'ensemble de mon projet afin :
 
 <h2 align="center"> DÉTAILS DU SYSTÈME </h2> <br> 
 
-Nous cherchons à représenter différents objets au sein d'une base de données afin d'organiser la clinique vétérinaire.
+On cherche à représenter les différents objets au sein d'une base de données afin d'organiser le parc informatique de la société.
 
 Les differents objets qu'on veut répresenter sont:
 
-* 
+* Les équipements
 * 
 * 
 * 
