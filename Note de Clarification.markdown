@@ -47,8 +47,8 @@ Les differents objets qu'on veut répresenter sont:
 * Les équipements
 * Les fournisseurs
 * Les localités
-* 
-* 
+* Les configurations
+* Les contrats de maintenance
 
 
 <h4> L'équipement </h4> <br> 
@@ -56,7 +56,9 @@ Les differents objets qu'on veut répresenter sont:
 - Numéro de série
 - nature
 - type
-
+- modèle
+- marque
+- prix
 
 
 <h4> Le fournisseur </h4> <br> 
@@ -72,20 +74,53 @@ Les differents objets qu'on veut répresenter sont:
 
 - Numéro
 - Rue
--Code postal
+- Code postal
 - Nom de ville
-- 
-- 
-- 
-
-<h4>  </h4> <br>
-
-- 
-- 
 
 
+<h4> Le contrat de maintenance </h4> <br>
 
-<h4>  </h4> <br>
+- mode de paiement
+- montant
+- date de signature
+
+
+<h4> Le ticket </h4> <br>
+
+- id 
+- dtPanne
+- description
+
+<h4> Le salarié </h4> <br>
+
+- nom
+- prénom
+- numéro de téléphone
+
+<h4> L'intervention </h4> <br>
+
+- id
+- prix
 
 
 
+<h4> Le technicien </h4> <br>
+
+- nom
+- prénom
+- numéro de téléphone
+
+<h4> La configuration </h4> <br>
+
+- dtAchat
+ 
+
+<h4> L'unite de gestion </h4> <br>
+
+- nom
+
+
+
+Liste des utilisateurs (rôles) appelés à modifier et consulter les données :
+
+    Le patron de la société pourra
