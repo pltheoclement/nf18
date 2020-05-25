@@ -69,7 +69,6 @@ Les differents objets qu'on veut répresenter sont:
 - Adresse email
 
 
-
 <h4> La localité </h4> <br> 
 
 - Numéro
@@ -80,23 +79,17 @@ Les differents objets qu'on veut répresenter sont:
 
 <h4> Le contrat de maintenance </h4> <br>
 
-- mode de paiement
+- mode de paiement : espèces, chèque, virement, carte bleue
 - montant
 - date de signature
 
 
 <h4> Le ticket </h4> <br>
 
-- id 
+- numéro
 - dtPanne
 - description
 
-<h4> Le technicien </h4> <br>
-
-- nom
-- prénom
-- numéro de téléphone
-- fournisseur pour qui il travaille
 
 <h4> L'intervention </h4> <br>
 
@@ -104,17 +97,17 @@ Les differents objets qu'on veut répresenter sont:
 - prix
 
 
-
 <h4> Le technicien </h4> <br>
 
 - nom
 - prénom
 - numéro de téléphone
 
+
 <h4> La configuration </h4> <br>
 
 - dtAchat
- 
+- dtAffectation
 
 <h4> L'unite de gestion </h4> <br>
 
@@ -125,7 +118,8 @@ Les differents objets qu'on veut répresenter sont:
 
 Liste des utilisateurs (rôles) appelés à modifier et consulter les données :
 
-    La société sera la seule à avoir accès aux données, les unités de gestions pourront donc modifier, consulter et ajouter des données concernant le parc informatique de la société.
+    La société sera la seule à avoir accès aux données.
+    Les unités de gestions pourront donc modifier, consulter et ajouter des données concernant le parc informatique de la société.
     
 Liste des fonctions que ces utilisateurs pourront effectuer :
 
