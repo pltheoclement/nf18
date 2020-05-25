@@ -52,7 +52,6 @@ Les differents objets qu'on veut répresenter sont:
 
 
 <h4> L'équipement </h4> <br> 
-
 - Numéro de série
 - nature
 - type
@@ -62,7 +61,6 @@ Les differents objets qu'on veut répresenter sont:
 
 
 <h4> Le fournisseur </h4> <br> 
-
 - Code
 - Nom
 - Numéro de téléphone
@@ -70,7 +68,6 @@ Les differents objets qu'on veut répresenter sont:
 
 
 <h4> La localité </h4> <br> 
-
 - Numéro
 - Rue
 - Code postal
@@ -78,39 +75,33 @@ Les differents objets qu'on veut répresenter sont:
 
 
 <h4> Le contrat de maintenance </h4> <br>
-
 - mode de paiement : espèces, chèque, virement, carte bleue
 - montant
 - date de signature
 
 
 <h4> Le ticket </h4> <br>
-
 - numéro
 - dtPanne
 - description
 
 
 <h4> L'intervention </h4> <br>
-
 - numéro
 - prix
 
 
 <h4> Le technicien </h4> <br>
-
 - nom
 - prénom
 - numéro de téléphone
 
 
 <h4> La configuration </h4> <br>
-
 - dtAchat
 - dtAffectation
 
 <h4> L'unite de gestion </h4> <br>
-
 - nom
 - nombre de membres 
 
