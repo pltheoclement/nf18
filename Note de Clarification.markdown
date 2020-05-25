@@ -51,7 +51,8 @@ Les differents objets qu'on veut répresenter sont:
 * Les contrats de maintenance
 
 
-<h4> L'équipement </h4> <br> 
+<h4> L'équipement </h4>  
+
 - Numéro de série
 - nature
 - type
@@ -60,48 +61,56 @@ Les differents objets qu'on veut répresenter sont:
 - prix
 
 
-<h4> Le fournisseur </h4> <br> 
+<h4> Le fournisseur </h4> 
+
 - Code
 - Nom
 - Numéro de téléphone
 - Adresse email
 
 
-<h4> La localité </h4> <br> 
+<h4> La localité </h4> 
+
 - Numéro
 - Rue
 - Code postal
 - Nom de ville
 
 
-<h4> Le contrat de maintenance </h4> <br>
+<h4> Le contrat de maintenance </h4> 
+
 - mode de paiement : espèces, chèque, virement, carte bleue
 - montant
 - date de signature
 
 
-<h4> Le ticket </h4> <br>
+<h4> Le ticket </h4> 
+
 - numéro
 - dtPanne
 - description
 
 
-<h4> L'intervention </h4> <br>
+<h4> L'intervention </h4> 
+
 - numéro
 - prix
 
 
-<h4> Le technicien </h4> <br>
+<h4> Le technicien </h4> 
+
 - nom
 - prénom
 - numéro de téléphone
 
 
-<h4> La configuration </h4> <br>
+<h4> La configuration </h4> 
+
 - dtAchat
 - dtAffectation
 
-<h4> L'unite de gestion </h4> <br>
+<h4> L'unite de gestion </h4> 
+
 - nom
 - nombre de membres 
 
