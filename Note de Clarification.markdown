@@ -91,15 +91,16 @@ Les differents objets qu'on veut répresenter sont:
 - dtPanne
 - description
 
-<h4> Le salarié </h4> <br>
+<h4> Le technicien </h4> <br>
 
 - nom
 - prénom
 - numéro de téléphone
+- fournisseur pour qui il travaille
 
 <h4> L'intervention </h4> <br>
 
-- id
+- numéro
 - prix
 
 
@@ -118,9 +119,19 @@ Les differents objets qu'on veut répresenter sont:
 <h4> L'unite de gestion </h4> <br>
 
 - nom
+- nombre de membres 
 
 
 
 Liste des utilisateurs (rôles) appelés à modifier et consulter les données :
 
-    Le patron de la société pourra
+    La société sera la seule à avoir accès aux données, les unités de gestions pourront donc modifier, consulter et ajouter des données concernant le parc informatique de la société.
+    
+Liste des fonctions que ces utilisateurs pourront effectuer :
+
+    Les membres des unités de gestions veulent pouvoir ajouter, mettre à jour et rechercher :
+    
+        - les différentes configurations en fonction des équipements
+        - Le temps restant en garantie, les équipements dont la garantie est bientôt épuisée.
+        - Les montants correspondants à des configurations.
+        - Les relations entre les pannes, les types d'équipement, les marques, les modèles.
