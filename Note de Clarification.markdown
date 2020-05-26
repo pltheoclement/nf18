@@ -20,8 +20,8 @@ La société veut pouvoir rechercher typiquement les configurations en fonction 
  Livrables v1 
 <br>
 
-- Analyse du besoin de l’utilisateur - Note de clarification | date de rendu : 25/05/2020
-- MCD | date de rendu : 25/05/2020
+- Analyse du besoin de l’utilisateur - Note de clarification | date de rendu : 26/05/2020
+- MCD | date de rendu : 26/05/2020
 - MLD relationnel | date de rendu : 01/06/2020
 - SQL CREATE | date de rendu : 01/06/2020
 - SQL INSERT | date de rendu : 01/06/2020
@@ -49,7 +49,12 @@ Les differents objets qu'on veut répresenter sont:
 * Les localités
 * Les configurations
 * Les contrats de maintenance
-
+* Les tickets
+* Les interventions
+* Les techniciens
+* Les unités de gestion
+* La société
+* Les affectations (entre configurations et unités de gestion)
 
 <h4> L'équipement </h4>  
 
@@ -60,6 +65,7 @@ Les differents objets qu'on veut répresenter sont:
 - marque
 - prix
 
+On considère un numéro de série unique par équipement
 
 <h4> Le fournisseur </h4> 
 
@@ -68,6 +74,7 @@ Les differents objets qu'on veut répresenter sont:
 - Numéro de téléphone
 - Adresse email
 
+Un fournisseur est défini par un code unique
 
 <h4> La localité </h4> 
 
@@ -75,6 +82,11 @@ Les differents objets qu'on veut répresenter sont:
 - Rue
 - Code postal
 - Nom de ville
+
+
+<h4> La configuration </h4> 
+
+- dtAchat
 
 
 <h4> Le contrat de maintenance </h4> 
@@ -94,7 +106,9 @@ Les differents objets qu'on veut répresenter sont:
 <h4> L'intervention </h4> 
 
 - numéro
-- prix
+- prix  ( peut être NULL )
+
+En cas de configuration avec des équipements sous garantie, l'intervention est donc gratuite
 
 
 <h4> Le technicien </h4> 
@@ -104,16 +118,24 @@ Les differents objets qu'on veut répresenter sont:
 - numéro de téléphone
 
 
-<h4> La configuration </h4> 
-
-- dtAchat
-- dtAffectation
-
-<h4> L'unite de gestion </h4> 
+<h4> L'unité de gestion </h4> 
 
 - nom
 - nombre de membres 
 
+Le nom de l'unité est considéré unique pour différencier les différentes unités de gestion au sein de l'entreprise
+
+<h4> La société </h4> 
+
+- nom
+- adresse
+- nombre d'employés
+
+
+
+<h4> L'affectaion </h4> 
+
+- date d'affectation
 
 
 Liste des utilisateurs (rôles) appelés à modifier et consulter les données :
