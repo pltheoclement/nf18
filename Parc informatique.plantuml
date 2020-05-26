@@ -2,7 +2,7 @@
 hide circle
 
 class Equipement {
-  numero de serie : numeric
+  numero de serie : numeric : KEY
   nature : varchar
   type : varchar
   modele : varchar
@@ -11,15 +11,15 @@ class Equipement {
 }
 
 class Le_ticket {
-  numero : numeric
+  numero : numeric : KEY
   dtPanne : date
   description : varchar
 }
 
 
 class L_intervention {
-  numero : numeric
-  prix : numeric
+  numero : numeric : KEY
+  prix : numeric : CAN BE NULL
 }
 
 class Technicien {
@@ -34,7 +34,7 @@ class La_configuration {
 
 
 class Le_fournisseur {
-  code : numeric
+  code : numeric : KEY
   nom : varchar
   numero_de_telephone : numeric
   adresse_e_mail : varchar
@@ -56,12 +56,12 @@ class Le_contrat_de_maintenance {
 
 
 class Unite_de_gestion {
- nom : varchar
+ nom : varchar : KEY
  nombre de membres : numeric
 }
 
 class Societe {
-  nom : varchar
+  nom : varchar not
   adresse : varchar
   nombre d'employes : numeric
 }
@@ -84,63 +84,16 @@ Le_contrat_de_maintenance "0..n" --- "1" Le_fournisseur  : effectue <
 Unite_de_gestion "1..n" -- "1" Societe : comporte <
 
 
+note as n1
+  On considere que :
+
+  les attributs pour lesquels ce n'est pas mentionne 'can be null' sont  NOT NULL
+
+  Une intervention d'un Technicien sur un Equipement d'une configuration sous garantie est gratuite
+
+  Un equipement a un numero de serie unique
+
+  Les unites de gestion ont un nom unique pour les differencier
+ end note
+
 @enduml
-
-
-Contraintes:
-
-Pour la classe "Equipement":
-  numero de serie : KEY
-  nature : NOT NULL
-  type : NOT NULL
-  modele : NOT NULL
-  marque : NOT NULL
-  prix : NOT NULL
-
-Pour la classe "Le_ticket"
-  numero : KEY
-  dtPanne : NOT NULL
-  description : NOT NULL
-
-Pour la classe "Technicien"
-  nom : NOT NULL
-  prenom : NOT NULL
-  numero_de_telephone : NOT NULL
-
-Pour la classe "L_intervention"
-  numero : KEY
-  prix : NOT NULL
-
-Pour la classe "La_configuration"
-    dtAchat: NOT NULL
-
-Pour la classe "Le_fournisseur"
-  code : KEY
-  nom : NOT NULL
-  numero_de_telephone : NOT NULL
-  adresse_e_mail : NOT NULL
-
-Pour la classe "La_localite"
-  numero : NOT NULL
-  rue : NOT NULL
-  code_postal : NOT NULL
-  nom_de_ville : NOT NULL
-
-Pour la classe "Le_contrat_de_maintenance"
-  mode de paiement : NOT NULL
-  montant : NOT NULL
-  dtSignature : NOT NULL
-
-
-Pour la classe "Unite_de_gestion"
-  nom : NOT NULL
-  nombre de mebmres : NOT NULL
-
-
-Pour la classe "Societe"
-  nom : NOT NULL
-  adresse : NOT NULL
-  nombre d'employes : NOT NULL
-
-Pour la classe "Affectation"
-  dtAffectation : NOT NULL
