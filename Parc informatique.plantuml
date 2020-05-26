@@ -1,1 +1,146 @@
 @startuml
+hide circle
+
+class Equipement {
+  numero de serie : numeric
+  nature : varchar
+  type : varchar
+  modele : varchar
+  marque : varchar
+  prix : numeric
+}
+
+class Le_ticket {
+  numero : numeric
+  dtPanne : date
+  description : varchar
+}
+
+
+class L_intervention {
+  numero : numeric
+  prix : numeric
+}
+
+class Technicien {
+  nom : varchar
+  prenom : varchar
+  numero_de_telephone : nuemric
+}
+
+class La_configuration {
+  dtAchat : date
+}
+
+
+class Le_fournisseur {
+  code : numeric
+  nom : varchar
+  numero_de_telephone : numeric
+  adresse_e_mail : varchar
+}
+
+class La_localite {
+  numero : numeric
+  rue : varchar
+  code_postal : numeric
+  nom_de_ville : varchar
+}
+
+
+class Le_contrat_de_maintenance {
+  mode de paiement : {especes, carte_bleue,chèque, virement}
+  montant : numeric
+  dtSignature : date
+}
+
+
+class Unite_de_gestion {
+ nom : varchar
+ nombre de membres : numeric
+}
+
+class Societe {
+  nom : varchar
+  adresse : varchar
+  nombre d'employes : numeric
+}
+
+class Affectation {
+  dtAffectation : date
+}
+
+Le_fournisseur "1" -- "1..n" Technicien : travaille pour <
+L_intervention "0..n" -- "1" Technicien : intervient <
+La_configuration "0..n" - "1..n" Unite_de_gestion
+(La_configuration,Unite_de_gestion) . Affectation
+L_intervention "0..n" -- "1..n" Equipement
+Le_contrat_de_maintenance "0..1" -- "0..n" La_configuration : concerne >
+Le_fournisseur "1" --- "0..n" La_configuration : propose >
+Equipement "1..n" - "1" La_configuration : constitue >
+La_localite "1..n" --- "1" Le_fournisseur : se trouve a <
+(Equipement,L_intervention) . Le_ticket
+Le_contrat_de_maintenance "0..n" --- "1" Le_fournisseur  : effectue <
+Unite_de_gestion "1..n" -- "1" Societe : comporte <
+
+
+@enduml
+
+
+Contraintes:
+
+Pour la classe "Equipement":
+  numero de serie : KEY
+  nature : NOT NULL
+  type : NOT NULL
+  modele : NOT NULL
+  marque : NOT NULL
+  prix : NOT NULL
+
+Pour la classe "Le_ticket"
+  numero : KEY
+  dtPanne : NOT NULL
+  description : NOT NULL
+
+Pour la classe "Technicien"
+  nom : NOT NULL
+  prenom : NOT NULL
+  numero_de_telephone : NOT NULL
+
+Pour la classe "L_intervention"
+  numero : KEY
+  prix : NOT NULL
+
+Pour la classe "La_configuration"
+    dtAchat: NOT NULL
+
+Pour la classe "Le_fournisseur"
+  code : KEY
+  nom : NOT NULL
+  numero_de_telephone : NOT NULL
+  adresse_e_mail : NOT NULL
+
+Pour la classe "La_localite"
+  numero : NOT NULL
+  rue : NOT NULL
+  code_postal : NOT NULL
+  nom_de_ville : NOT NULL
+
+Pour la classe "Le_contrat_de_maintenance"
+  mode de paiement : NOT NULL
+  montant : NOT NULL
+  dtSignature : NOT NULL
+
+
+Pour la classe "Unite_de_gestion"
+  nom : NOT NULL
+  nombre de mebmres : NOT NULL
+
+
+Pour la classe "Societe"
+  nom : NOT NULL
+  adresse : NOT NULL
+  nombre d'employes : NOT NULL
+
+Pour la classe "Affectation"
+  dtAffectation : NOT NULL
