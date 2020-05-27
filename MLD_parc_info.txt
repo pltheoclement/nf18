@@ -1,0 +1,46 @@
+
+Equipement (
+    #numero de serie : integer,
+    nature : string,
+    type : string,
+    modèle :string,
+    marque : string,
+    prix : integer,
+    ) avec tout les attributs NOT NULL
+On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série est la clé primaire car il est unique pour un équipement ce qui va permettre de différencier tout les équipements.
+
+Le_ticket (
+    #numero : integer,
+    dtPanne :date,
+    description : string,
+    ) avec tout les attributs NOT NULL
+Ici le numéro du ticket est l'élément qui va permettre de différencier tout les tickets, il est donc unique et c'est donc la clé primaire.
+
+L_intervention (
+    #numero : integer,
+    prix : integer,
+    ) avec numero NOT NULL
+Tout comme pour Le ticket, le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
+
+Technicien (
+    #id : integer,
+    nom : string,
+    prénom : string,
+    numero_de_telephone : integer,
+    ) avec les trois attributs NOT NULL
+Pour les techniciens, on crée un id car il se peut que des techniciens aient en commun des attributs de la classe. L'id est donc la clé primaire pour les différenier.
+
+La_configuration (
+    dtAchat : date
+    ) avec dtAchat NOT NULL
+    
+---------
+
+Le_fournisseur (
+    #code : integer,
+    nom : string,
+    numero_de_telephone : integer,
+    adresse_e_mail : string,
+    ) avec tout les attributs NOT NULL
+Le fournisseur possède un code unique, il est non nul, c'est donc la clé primaire pour cette classe.
+
