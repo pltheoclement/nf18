@@ -61,7 +61,7 @@ class Unite_de_gestion {
 }
 
 class Societe {
-  nom : varchar not
+  nom : varchar :KEY
   adresse : varchar
   nombre d'employes : numeric
 }
