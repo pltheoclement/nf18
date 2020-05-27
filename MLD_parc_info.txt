@@ -1,4 +1,3 @@
-
 Equipement (
     #numero de serie : integer,
     nature : string,
@@ -44,3 +43,37 @@ Le_fournisseur (
     ) avec tout les attributs NOT NULL
 Le fournisseur possède un code unique, il est non nul, c'est donc la clé primaire pour cette classe.
 
+La_localite (
+    #id : integer,
+    numero : integer,
+    rue : string,
+    code_postal : integer,
+    nom_de_ville : string,
+    ) avec tout les attributs NOT NULL
+On ajoute un id qui servira de clé primaire pour pouvoir différencier les localités car il se peut qu'elles aient en commun des attributs de la classe.
+
+Le_contrat_de_maintenance (
+    #id : integer,
+    mode_de_paiement : {especes,carte_bleue,chèque,virement),
+    montant : integer,
+    dtSignature : date,
+    ) avec les trois attributs NOT NULL
+Pour cette classe aussi on choisit d'utiliser un id en tant que clé primaire pour différencier les contrats car il se peut que des contrats de maintenance aient en commun plusieurs des attributs.
+    
+Unite_de_gestion (
+    #nom : string,
+    nombre_de_membres : integer,
+    )  avec nom et nombre_de_membres NOT NULL
+Ici on a supposé le nom de l'unité de gestion unique au sein de la société pour permettre de différencier toutes les unités. C'est donc notre clé primaire pour cette classe.
+
+Societe ( 
+    #nom : string,
+    adresse : string,
+    nombre d'employes : integer,
+    ) avec tout les attributs NOT NULL
+Le nom de la société est unique et non nul, c'est la clé primaire
+    
+Affectation (
+    dtAffectation : date
+    ) avec dtAffectation NOT NULL
+    
