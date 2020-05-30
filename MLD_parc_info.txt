@@ -6,19 +6,21 @@ Equipement (
     marque : string,
     prix : integer,
     ) avec tout les attributs NOT NULL
-On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série est la clé primaire car il est unique pour un équipement ce qui va permettre de différencier tout les équipements.
+On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série d'un équipement est unique et donc c'est la clé primaire ce qui va permettre de différencier tout les équipements.
 
 Le_ticket (
     #numero : integer,
     dtPanne :date,
     description : string,
+    Unite => Unite_de_gestion,
     ) avec tout les attributs NOT NULL
 Ici le numéro du ticket est l'élément qui va permettre de différencier tout les tickets, il est donc unique et c'est donc la clé primaire.
 
 L_intervention (
     #numero : integer,
     prix : integer,
-    ) avec numero NOT NULL
+    technicien => Technicien,
+    ) avec numero et technicien NOT NULL
 Tout comme pour Le ticket, le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
 Technicien (
@@ -26,14 +28,16 @@ Technicien (
     nom : string,
     prénom : string,
     numero_de_telephone : integer,
-    ) avec les trois attributs NOT NULL
-Pour les techniciens, on crée un id car il se peut que des techniciens aient en commun des attributs de la classe. L'id est donc la clé primaire pour les différenier.
+    fournisseur => Fournisseur,
+    ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
+Pour les techniciens, on créer un id car il se peut que des techniciens aient en commun des attributs de la classe. L'id est donc la clé primaire pour permettre les différenier.
 
 La_configuration (
-    dtAchat : date
-    ) avec dtAchat NOT NULL
-    
----------
+    #id : integer,
+    dtAchat : date,
+    fournisseur => Fournisseur,
+    ) avec dtAchat et fournisseur NOT NULL
+On décide de créer ici aussi un id pour les configurations, c'est la clé primaire qui va permettre de les distinguer.
 
 Le_fournisseur (
     #code : integer,
@@ -49,15 +53,17 @@ La_localite (
     rue : string,
     code_postal : integer,
     nom_de_ville : string,
+    fournisseur => Fournisseur
     ) avec tout les attributs NOT NULL
-On ajoute un id qui servira de clé primaire pour pouvoir différencier les localités car il se peut qu'elles aient en commun des attributs de la classe.
+On ajoute un id pour les localités, qui servira de clé primaire pour pouvoir différencier les localités car il se peut qu'elles aient en commun des attributs de la classe.
 
 Le_contrat_de_maintenance (
     #id : integer,
     mode_de_paiement : {especes,carte_bleue,chèque,virement),
     montant : integer,
     dtSignature : date,
-    ) avec les trois attributs NOT NULL
+    fournisseur => Fournisseur,
+    ) avec tout les attributs NOT NULL
 Pour cette classe aussi on choisit d'utiliser un id en tant que clé primaire pour différencier les contrats car il se peut que des contrats de maintenance aient en commun plusieurs des attributs.
     
 Unite_de_gestion (
@@ -66,14 +72,20 @@ Unite_de_gestion (
     )  avec nom et nombre_de_membres NOT NULL
 Ici on a supposé le nom de l'unité de gestion unique au sein de la société pour permettre de différencier toutes les unités. C'est donc notre clé primaire pour cette classe.
 
-Societe ( 
-    #nom : string,
-    adresse : string,
-    nombre d'employes : integer,
-    ) avec tout les attributs NOT NULL
-Le nom de la société est unique et non nul, c'est la clé primaire
     
 Affectation (
-    dtAffectation : date
-    ) avec dtAffectation NOT NULL
+    dtAffectation : date,
+    #configuration => La_configuration,
+    #unite => Unite_de_gestion,
+    ) avec dtAffectation, configuration et Unite NOT NULL
     
+On a une relation N:M entre La_configuration et Unite_de_gestion donc on doit créer une nouvelle classe : Affectation, dont la clé primaire sera (configuration,unite) référant aux deux tables.
+    
+    
+dateIntervention (
+    dtIntervention : date,
+    #intervention => L_intervention,
+    #equipement => Equipement,
+    ) avec dtIntervention, intervention et equipement NOT NULL
+    
+On a une relation N:M entre L_intervention et Equipement donc on doit créer une nouvelle classe : dateIntervention, dont la clé primaire sera (intervention,equipement) référant aux deux tables.
