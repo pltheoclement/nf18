@@ -81,7 +81,7 @@ La_localite "1..n" --- "1" Le_fournisseur : se trouve a <
 Le_contrat_de_maintenance "0..n" --- "1" Le_fournisseur  : effectue <
 Unite_de_gestion "1" --- "0..n" Le_ticket : redige >
 Equipement "1" -- "0..n" Le_ticket : concerne <
-L_intervention "1" -- "1..n" Le_ticket : permet <
+L_intervention "1" -- "1" Le_ticket : permet <
 (L_intervention,Equipement) . dateIntervention
 
 note as n1
@@ -94,6 +94,8 @@ note as n1
   Un equipement a un numero de serie unique
 
   Les unites de gestion ont un nom unique pour les differencier
+
+  Un ticket par intervention
 
  end note
 
