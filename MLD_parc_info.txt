@@ -6,6 +6,7 @@ Equipement (
     marque : string,
     prix : integer,
     ) avec tout les attributs NOT NULL
+    
 On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série d'un équipement est unique et donc c'est la clé primaire ce qui va permettre de différencier tout les équipements.
 
 Le_ticket (
@@ -14,6 +15,7 @@ Le_ticket (
     description : string,
     Unite => Unite_de_gestion,
     ) avec tout les attributs NOT NULL
+    
 Ici le numéro du ticket est l'élément qui va permettre de différencier tout les tickets, il est donc unique et c'est donc la clé primaire.
 
 L_intervention (
@@ -21,6 +23,7 @@ L_intervention (
     prix : integer,
     technicien => Technicien,
     ) avec numero et technicien NOT NULL
+    
 Tout comme pour Le ticket, le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
 Technicien (
@@ -30,6 +33,7 @@ Technicien (
     numero_de_telephone : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
+    
 Pour les techniciens, on créer un id car il se peut que des techniciens aient en commun des attributs de la classe. L'id est donc la clé primaire pour permettre les différenier.
 
 La_configuration (
@@ -37,6 +41,7 @@ La_configuration (
     dtAchat : date,
     fournisseur => Fournisseur,
     ) avec dtAchat et fournisseur NOT NULL
+    
 On décide de créer ici aussi un id pour les configurations, c'est la clé primaire qui va permettre de les distinguer.
 
 Le_fournisseur (
@@ -45,6 +50,7 @@ Le_fournisseur (
     numero_de_telephone : integer,
     adresse_e_mail : string,
     ) avec tout les attributs NOT NULL
+    
 Le fournisseur possède un code unique, il est non nul, c'est donc la clé primaire pour cette classe.
 
 La_localite (
@@ -55,6 +61,7 @@ La_localite (
     nom_de_ville : string,
     fournisseur => Fournisseur
     ) avec tout les attributs NOT NULL
+    
 On ajoute un id pour les localités, qui servira de clé primaire pour pouvoir différencier les localités car il se peut qu'elles aient en commun des attributs de la classe.
 
 Le_contrat_de_maintenance (
@@ -64,12 +71,14 @@ Le_contrat_de_maintenance (
     dtSignature : date,
     fournisseur => Fournisseur,
     ) avec tout les attributs NOT NULL
+    
 Pour cette classe aussi on choisit d'utiliser un id en tant que clé primaire pour différencier les contrats car il se peut que des contrats de maintenance aient en commun plusieurs des attributs.
     
 Unite_de_gestion (
     #nom : string,
     nombre_de_membres : integer,
     )  avec nom et nombre_de_membres NOT NULL
+    
 Ici on a supposé le nom de l'unité de gestion unique au sein de la société pour permettre de différencier toutes les unités. C'est donc notre clé primaire pour cette classe.
 
     
