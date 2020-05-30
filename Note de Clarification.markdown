@@ -53,8 +53,7 @@ Les differents objets qu'on veut répresenter sont:
 * Les interventions
 * Les techniciens
 * Les unités de gestion
-* La société
-* Les affectations (entre configurations et unités de gestion)
+
 
 <h4> L'équipement </h4>  
 
@@ -67,6 +66,7 @@ Les differents objets qu'on veut répresenter sont:
 
 On considère un numéro de série unique par équipement
 
+
 <h4> Le fournisseur </h4> 
 
 - Code
@@ -74,7 +74,8 @@ On considère un numéro de série unique par équipement
 - Numéro de téléphone
 - Adresse email
 
-Un fournisseur est défini par un code unique
+Un fournisseur est défini par un code unique, il peut avoir plusieurs localités.
+
 
 <h4> La localité </h4> 
 
@@ -88,6 +89,8 @@ Un fournisseur est défini par un code unique
 
 - dtAchat
 
+Elle est acquise auprès d'un fournisseur.
+
 
 <h4> Le contrat de maintenance </h4> 
 
@@ -95,12 +98,16 @@ Un fournisseur est défini par un code unique
 - montant
 - date de signature
 
+Un contrat de maintenance peut concerner plusieurs configurations
+
 
 <h4> Le ticket </h4> 
 
 - numéro
 - dtPanne
 - description
+
+On considère un ticket par intervention.
 
 
 <h4> L'intervention </h4> 
@@ -117,6 +124,8 @@ En cas de configuration avec des équipements sous garantie, l'intervention est 
 - prénom
 - numéro de téléphone
 
+On considère que le technicien travaille pour un seul fournisseur.
+
 
 <h4> L'unité de gestion </h4> 
 
@@ -125,17 +134,6 @@ En cas de configuration avec des équipements sous garantie, l'intervention est 
 
 Le nom de l'unité est considéré unique pour différencier les différentes unités de gestion au sein de l'entreprise
 
-<h4> La société </h4> 
-
-- nom
-- adresse
-- nombre d'employés
-
-
-
-<h4> L'affectaion </h4> 
-
-- date d'affectation
 
 
 Liste des utilisateurs (rôles) appelés à modifier et consulter les données :
