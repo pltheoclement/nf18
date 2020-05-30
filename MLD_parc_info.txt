@@ -40,6 +40,7 @@ La_configuration (
     #id : integer,
     dtAchat : date,
     fournisseur => Fournisseur,
+    contrat => Le_contrat_de_maintenance
     ) avec dtAchat et fournisseur NOT NULL
     
 On décide de créer ici aussi un id pour les configurations, c'est la clé primaire qui va permettre de les distinguer.
