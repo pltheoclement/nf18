@@ -5,6 +5,7 @@ CREATE TABLE Equipement (
     modele VARCHAR NOT NULL,
     marque  VARCHAR NOT NULL,
     prix  integer NOT NULL,
+    FOREIGN KEY configuration REFERENCES La_configuration(id),
     PRIMARY KEY (numero_de_serie)
     );
 
