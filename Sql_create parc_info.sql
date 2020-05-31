@@ -1,5 +1,5 @@
 CREATE TABLE Equipement (
-    numero_de_serie  SERIAL,
+    numero_de_serie  INTEGER,
     nature  VARCHAR NOT NULL,
     type  VARCHAR NOT NULL,
     modele VARCHAR NOT NULL,
