@@ -12,14 +12,17 @@
  INSERT INTO Le_ticket (numero,dtPanne,description,Unite) VALUES (4,'04-08-2019','blue screen sur ordinateur Macbook PRO','Mars');
  
 
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30);
+ INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30,3);
+ INSERT INTO L_intervention (numero, prix,technicien) VALUES (2,30,4);
+ INSERT INTO L_intervention (numero, prix,technicien) VALUES (3,30,1);
+ INSERT INTO L_intervention (numero, prix,technicien) VALUES (4,30,12);
 
- INSERT INTO Technicien (id, nom, prenom, numero_de_telephone)
- VALUES
-    ;
+
+ INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (1,'thomas','legrand',0645654512,20);
+ INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (2,'gerard','petit',0642854512,235);
+ INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (3,'clement','douale',0616456430,20);
+ INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (4,'matteo','rengard',0625458563,2455);
+ 
 
  INSERT INTO La_configuration (dtAchat,
    ;
