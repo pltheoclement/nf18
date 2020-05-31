@@ -24,18 +24,25 @@
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (4,'matteo','rengard',0625458563,2455);
  
 
- INSERT INTO La_configuration (dtAchat,
-   ;
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,02-02-2019,235,4);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,01-12-2019,20,2);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,23-07-2019,2455,1);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,08-20-2019,235,3);
+   
 
 
- INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail)
- VALUES
-  ;
+ INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail) VALUES (20,'LDLC PRO',0654578452,'ldlcpro@gmail.com');
+ INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail) VALUES (235,'Bureau Vallée',0754248425,'bureau.vallee@gmail.com');
+ INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail) VALUES (2455,'Axido',0621548796,'Axido@hotmail.fr');
+ 
 
 
- INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville)
- VALUES ;
-
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (1,24,'rue georges pompidou',60200,'Compiègne',20);
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (2,112,'rue de chérisy',62156,'Vis-en-artois',20);
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (3,38,'rue des tours',62156,'Rémy',235);
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (4,2,'rue de la paix',75020,'Paris',2455);
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (5,25,'rue du moulin',62000,'Arras',20);
+ INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (6,43,'rue georges pompidou',60200,'Compiègne',235);
 
  INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature)
  VALUES
