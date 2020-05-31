@@ -5,6 +5,7 @@ Equipement (
     modèle :string,
     marque : string,
     prix : integer,
+    configuration => La_configuration
     ) avec tout les attributs NOT NULL
     
 On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série d'un équipement est unique et donc c'est la clé primaire ce qui va permettre de différencier tout les équipements.
