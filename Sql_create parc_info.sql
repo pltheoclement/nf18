@@ -18,7 +18,7 @@ CREATE TABLE Le_ticket (
 
 CREATE TABLE L_intervention (
     numero  SERIAL,
-    prix  integer NOT NULL,
+    prix  integer CHECK (prix >= 0),
     FOREIGN KEY technicien REFERENCES Technicien(id),
     PRIMARY KEY (numero)
     );
@@ -64,7 +64,7 @@ CREATE TABLE La_localite (
 CREATE TABLE Le_contrat_de_maintenance (
     id SERIAL,
     mode_de_paiement  VARCHAR CHECK (mode_de_paiement in('especes','carte_bleue','chèque','virement')),
-    montant INTEGER NOT NULL,
+    montant INTEGER NOT NULL CHECK (montant > 0),
     dtSignature  date NOT NULL,
     FOREIGN KEY fournisseur REFERENCES Fournisseur(code),
     PRIMARY KEY (id)
