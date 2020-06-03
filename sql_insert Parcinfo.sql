@@ -27,7 +27,7 @@
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,'02-02-2019',235,4);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,'01-03-2020',20,2);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2019',2455,1);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'8-20-2019',235,3);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'20-08-2019',235,3);
    
 
  INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail) VALUES (20,'LDLC PRO',0654578452,'ldlcpro@gmail.com');
