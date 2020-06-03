@@ -49,7 +49,6 @@ Les differents objets qu'on veut répresenter sont:
 * Les localités
 * Les configurations
 * Les contrats de maintenance
-* Les tickets
 * Les interventions
 * Les techniciens
 * Les unités de gestion
@@ -101,19 +100,13 @@ Elle est acquise auprès d'un fournisseur.
 Un contrat de maintenance peut concerner plusieurs configurations
 
 
-<h4> Le ticket </h4> 
-
-- numéro
-- dtPanne
-- description
-
-On considère un ticket par intervention.
-
-
 <h4> L'intervention </h4> 
 
 - numéro
 - prix  ( peut être NULL )
+- date d'intervention
+- date de panne
+- description
 
 En cas de configuration avec des équipements sous garantie, l'intervention est donc gratuite
 
