@@ -24,20 +24,15 @@
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (45,'clavier','mecanique', 'CK550', 'Cooler Master', 70,1);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (48,'ecran','LCD', 'S24D330', 'Samsung', 130,4);
  
- INSERT INTO Le_ticket (numero,dtPanne,description,Unite,numero_equip) VALUES (1,'20-05-2020','ecran Samsung ne démarre plus','Mercure',48);
- INSERT INTO Le_ticket (numero,dtPanne,description,Unite,numero_equip) VALUES (2,'1-01-2020','probleme de carte reseau sur ordinateur Asus','Terre',1);
- INSERT INTO Le_ticket (numero,dtPanne,description,Unite,numero_equip) VALUES (3,'29-04-2020','imprimante Canon en panne', 'Venus',412);
- INSERT INTO Le_ticket (numero,dtPanne,description,Unite,numero_equip) VALUES (4,'04-08-2019','blue screen sur ordinateur Macbook PRO','Terre',142);
- 
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (1,'thomas','legrand',0645654512,20);
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (2,'gerard','petit',0642854512,235);
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (3,'clement','douale',0616456430,20);
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (4,'matteo','rengard',0625458563,2455);
  
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30,3);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (2,30,4);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (3,30,1);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (4,30,2);
+ INSERT INTO L_intervention (numero, prix, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (1,30,'20-05-2020','5-05-2020','ecran Samsung ne démarre plus',48,3,'Mercure');
+ INSERT INTO L_intervention (numero, prix, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (2,30,'12-04-2020','29-03-2020','probleme de carte reseau sur ordinateur Asus',1,4,'Terre');
+ INSERT INTO L_intervention (numero, prix, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (3,30,'9-08-2019','04-08-2019','blue screen sur ordinateur Macbook PRO',142,1,'Terre');
+ INSERT INTO L_intervention (numero, prix, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (4,30,'23-01-2020','1-01-2020','imprimante Canon en panne',412,2,'Venus');
 
  INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (1,24,'rue georges pompidou',60200,'Compiègne',20);
  INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (2,112,'rue de chérisy',62156,'Vis-en-artois',20);
@@ -51,9 +46,5 @@
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('18-05-2019',2,'Venus');
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2019',1,'Terre');
 
- INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('12-01-2020',2,1);
- INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('5-05-2020',1,412);
- INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('9-08-2019',4,142);
- INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('23-05-2020',3,45);
  
     
