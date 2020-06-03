@@ -15,7 +15,7 @@
  INSERT INTO L_intervention (numero, prix,technicien) VALUES (1,30,3);
  INSERT INTO L_intervention (numero, prix,technicien) VALUES (2,30,4);
  INSERT INTO L_intervention (numero, prix,technicien) VALUES (3,30,1);
- INSERT INTO L_intervention (numero, prix,technicien) VALUES (4,30,12);
+ INSERT INTO L_intervention (numero, prix,technicien) VALUES (4,30,2);
 
 
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (1,'thomas','legrand',0645654512,20);
