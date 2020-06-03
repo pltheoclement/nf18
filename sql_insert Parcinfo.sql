@@ -24,10 +24,10 @@
  INSERT INTO Technicien (id, nom, prenom, numero_de_telephone,fournisseur) VALUES (4,'matteo','rengard',0625458563,2455);
  
 
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,02-02-2019,235,4);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,01-03-2020,20,2);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,23-07-2019,2455,1);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,8-20-2019,235,3);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,'02-02-2019',235,4);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,'01-03-2020',20,2);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2019',2455,1);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'8-20-2019',235,3);
    
 
  INSERT INTO Le_fournisseur (code, nom, numero_de_telephone, adresse_e_mail) VALUES (20,'LDLC PRO',0654578452,'ldlcpro@gmail.com');
@@ -43,10 +43,10 @@
  INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (6,43,'rue georges pompidou',60200,'Compiègne',235);
 
 
- INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (1,'chèque',200, 12-02-2020, 235);
- INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (2,'especes',67, 17-04-2020, 20);
- INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (3,'carte_bleue',110, 17-04-2020, 20);
- INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (4,'especes',45, 12-02-2020, 20);
+ INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (1,'chèque',200, '12-02-2020', 235);
+ INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (2,'especes',67, '17-04-2020', 20);
+ INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (3,'carte_bleue',110, '17-04-2020', 20);
+ INSERT INTO Le_contrat_de_maintenance (id, mode_de_paiement, montant, dtSignature, fournisseur) VALUES (4,'especes',45, '12-02-2020', 20);
  
 
  INSERT INTO Unite_de_gestion (nom, nombre_de_membres) VALUES ('Terre',5);
@@ -55,15 +55,15 @@
  INSERT INTO Unite_de_gestion (nom, nombre_de_membres) VALUES ('Mars',3);
  
 
- INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES (11-01-2020,4,'Mercure');
- INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES (4-02-2019,3,'Terre');
- INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES (18-05-2019,2,'Venus');
- INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES (10-01-2019,1,'Terre');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('11-01-2020',4,'Mercure');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('4-02-2019',3,'Terre');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('18-05-2019',2,'Venus');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2019',1,'Terre');
 
 
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES (12-01-2020,2,1);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES (5-05-2020,1,412);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES (9-08-2019,4,142);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES (23-05-2020,3,45);
+ INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('12-01-2020',2,1);
+ INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('5-05-2020',1,412);
+ INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('9-08-2019',4,142);
+ INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('23-05-2020',3,45);
  
     
