@@ -16,9 +16,10 @@ L_intervention (
     dtIntervention : date,
     dtPanne: date,
     description : string,
-    num_equip => Equipement
+    num_equip => Equipement,
     technicien => Technicien,
-    ) avec numero, dtIntervention, dtPanne, description, num_equip et technicien NOT NULL
+    Unite => Unite_de_gestion,
+    ) avec numero, dtIntervention, dtPanne, description, num_equip, technicien et Unite NOT NULL
     
 Ici le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
