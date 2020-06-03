@@ -16,7 +16,7 @@ CREATE TABLE Le_contrat_de_maintenance (
     PRIMARY KEY (id)
     );
 
-CREATE TABLE configuration (
+CREATE TABLE La_configuration (
     id SERIAL,
     dtAchat  date NOT NULL,
     fournisseur INTEGER,
@@ -41,7 +41,7 @@ CREATE TABLE Equipement (
     marque  VARCHAR NOT NULL,
     prix  integer NOT NULL,
     configuration SERIAL,
-    FOREIGN KEY (configuration) REFERENCES configuration(id),
+    FOREIGN KEY (configuration) REFERENCES La_configuration(id),
     PRIMARY KEY (numero_de_serie)
     );
 
@@ -87,7 +87,7 @@ CREATE TABLE Affectation (
     dtAffectation  date NOT NULL,
     configuration SERIAL,
     unite VARCHAR,
-    FOREIGN KEY (configuration) REFERENCES configuration(id),
+    FOREIGN KEY (configuration) REFERENCES La_configuration(id),
     FOREIGN KEY (unite) REFERENCES Unite_de_gestion(nom),
     PRIMARY KEY (configuration,unite)
     );
