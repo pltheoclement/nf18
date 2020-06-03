@@ -3,7 +3,7 @@
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (412,'imprimante','jet d_encre', 'TS9150', 'Canon', 210,2);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (142,'ordianteur','bureautique', 'Macbook PRO', 'Apple', 1500,3);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (45,'clavier','mecanique', 'CK550', 'Cooler Master', 70,1);
- INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (45,'ecran','LCD', 'S24D330', 'Samsung', 130,4);
+ INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (48,'ecran','LCD', 'S24D330', 'Samsung', 130,4);
    
 
  INSERT INTO Le_ticket (numero,dtPanne,description,Unite) VALUES (1,'20-05-2020','ecran Samsung ne démarre plus','Mercure');
