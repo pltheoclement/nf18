@@ -50,7 +50,7 @@ CREATE TABLE Le_ticket (
     dtPanne date NOT NULL,
     description  VARCHAR NOT NULL,
     Unite VARCHAR,
-    numero_equip
+    numero_equip INTEGER,
     FOREIGN KEY (numero_equip) REFERENCES Equipement(numero_de_serie)
     FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom),
     PRIMARY KEY (numero)
