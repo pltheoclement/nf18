@@ -10,22 +10,17 @@ Equipement (
     
 On va supposer que le prix d'un équipement est un nombre entier, et que le numéro de série d'un équipement est unique et donc c'est la clé primaire ce qui va permettre de différencier tout les équipements.
 
-Le_ticket (
-    #numero : integer,
-    dtPanne :date,
-    description : string,
-    Unite => Unite_de_gestion,
-    ) avec tout les attributs NOT NULL
-    
-Ici le numéro du ticket est l'élément qui va permettre de différencier tout les tickets, il est donc unique et c'est donc la clé primaire.
-
 L_intervention (
     #numero : integer,
     prix : integer,
+    dtIntervention : date,
+    dtPanne: date,
+    description : string,
+    num_equip => Equipement
     technicien => Technicien,
-    ) avec numero et technicien NOT NULL
+    ) avec numero, dtIntervention, dtPanne, description, num_equip et technicien NOT NULL
     
-Tout comme pour Le ticket, le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
+Ici le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
 Technicien (
     #id : integer,
@@ -93,10 +88,3 @@ Affectation (
 On a une relation N:M entre La_configuration et Unite_de_gestion donc on doit créer une nouvelle classe : Affectation, dont la clé primaire sera (configuration,unite) référant aux deux tables.
     
     
-dateIntervention (
-    dtIntervention : date,
-    #intervention => L_intervention,
-    #equipement => Equipement,
-    ) avec dtIntervention, intervention et equipement NOT NULL
-    
-On a une relation N:M entre L_intervention et Equipement donc on doit créer une nouvelle classe : dateIntervention, dont la clé primaire sera (intervention,equipement) référant aux deux tables.
