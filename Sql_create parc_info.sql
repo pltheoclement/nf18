@@ -45,17 +45,6 @@ CREATE TABLE Equipement (
     PRIMARY KEY (numero_de_serie)
     );
 
-CREATE TABLE Le_ticket (
-    numero  SERIAL,
-    dtPanne date NOT NULL,
-    description  VARCHAR NOT NULL,
-    Unite VARCHAR,
-    numero_equip INTEGER,
-    FOREIGN KEY (numero_equip) REFERENCES Equipement(numero_de_serie),
-    FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom),
-    PRIMARY KEY (numero)
-    );
-
 CREATE TABLE Technicien (
     id  SERIAL,
     nom  VARCHAR NOT NULL,
@@ -69,7 +58,14 @@ CREATE TABLE Technicien (
 CREATE TABLE L_intervention (
     numero  SERIAL,
     prix  integer CHECK (prix >= 0),
-    technicien SERIAL,
+    dtIntervention date NOT NULL,
+    dtPanne date NOT NULL,
+    description VARCHAR NOT NULL,
+    numero_equip INTEGER NOT NULL,
+    technicien INTEGER,
+    Unite VARCHAR,
+    FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom),
+    FOREIGN KEY (numero_equip) REFERENCES Equipement(numero_de_serie),
     FOREIGN KEY (technicien) REFERENCES Technicien(id),
     PRIMARY KEY (numero)
     );
@@ -94,11 +90,3 @@ CREATE TABLE Affectation (
     PRIMARY KEY (configuration,unite)
     );
     
-CREATE TABLE dateIntervention (
-    dtIntervention date NOT NULL,
-    intervention SERIAL,
-    equipement INTEGER,
-    FOREIGN KEY (intervention) REFERENCES L_intervention(numero),
-    FOREIGN KEY( equipement) REFERENCES Equipement(numero_de_serie),
-    PRIMARY KEY (intervention,equipement)
-    );
