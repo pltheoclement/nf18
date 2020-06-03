@@ -61,9 +61,9 @@
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2019',1,'Terre');
 
 
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('12-01-2020',2,1);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('5-05-2020',1,412);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('9-08-2019',4,142);
- INSERT INTO dateIntervention (dtInvervention,intervention,equipement) VALUES ('23-05-2020',3,45);
+ INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('12-01-2020',2,1);
+ INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('5-05-2020',1,412);
+ INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('9-08-2019',4,142);
+ INSERT INTO dateIntervention (dtIntervention,intervention,equipement) VALUES ('23-05-2020',3,45);
  
     
