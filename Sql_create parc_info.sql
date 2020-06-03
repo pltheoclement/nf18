@@ -20,7 +20,7 @@ CREATE TABLE La_configuration (
     id SERIAL,
     dtAchat  date NOT NULL,
     fournisseur INTEGER,
-    contrat SERIAL,
+    contrat INTEGER,
     FOREIGN KEY (fournisseur) REFERENCES Le_Fournisseur(code),
     FOREIGN KEY (contrat) REFERENCES Le_contrat_de_maintenance(id),
     PRIMARY KEY (id)
@@ -40,7 +40,7 @@ CREATE TABLE Equipement (
     modele VARCHAR NOT NULL,
     marque  VARCHAR NOT NULL,
     prix  integer NOT NULL,
-    configuration SERIAL,
+    configuration INTEGER,
     FOREIGN KEY (configuration) REFERENCES La_configuration(id),
     PRIMARY KEY (numero_de_serie)
     );
@@ -83,7 +83,7 @@ CREATE TABLE La_localite (
 
 CREATE TABLE Affectation (
     dtAffectation  date NOT NULL,
-    configuration SERIAL,
+    configuration INTEGER,
     unite VARCHAR,
     FOREIGN KEY (configuration) REFERENCES La_configuration(id),
     FOREIGN KEY (unite) REFERENCES Unite_de_gestion(nom),
