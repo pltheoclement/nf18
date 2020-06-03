@@ -17,7 +17,7 @@
  INSERT INTO Unite_de_gestion (nom, nombre_de_membres) VALUES ('Venus',12);
  INSERT INTO Unite_de_gestion (nom, nombre_de_membres) VALUES ('Mars',3);
  
- INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (1,'ordianteur','bureautique', 'X751B', 'Asus', 985,3);
+ INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (1,'ordianteur','bureautique', 'X751B', 'Asus', 985,1);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (745,'imprimante','laser 5p/mn', 'envy7830', 'Hp', 160,1);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (412,'imprimante','jet d_encre', 'TS9150', 'Canon', 210,2);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix,configuration) VALUES (142,'ordianteur','bureautique', 'Macbook PRO', 'Apple', 1500,3);
