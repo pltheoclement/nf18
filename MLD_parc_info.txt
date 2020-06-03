@@ -16,7 +16,7 @@ L_intervention (
     dtIntervention : date,
     dtPanne: date,
     description : string,
-    num_equip => Equipement,
+    numero_equip => Equipement,
     technicien => Technicien,
     Unite => Unite_de_gestion,
     ) avec numero, dtIntervention, dtPanne, description, num_equip, technicien et Unite NOT NULL
