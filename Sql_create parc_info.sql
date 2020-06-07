@@ -46,13 +46,12 @@ CREATE TABLE Equipement (
     );
 
 CREATE TABLE Technicien (
-    id  SERIAL,
     nom  VARCHAR NOT NULL,
     prenom  VARCHAR NOT NULL,
     numero_de_telephone INTEGER NOT NULL,
     fournisseur INTEGER,
     FOREIGN KEY (fournisseur) REFERENCES Le_Fournisseur(code),
-    PRIMARY KEY (id)
+    PRIMARY KEY (numero_de_telephone)
     );
 
 CREATE TABLE L_intervention (
