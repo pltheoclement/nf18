@@ -1,0 +1,65 @@
+Premièrement, on va déterminer les DFs et les clés de chaque relation : 
+
+Voici la relation Equipement :
+
+Equipement (
+    #numero de serie : integer,
+    nature : string,
+    type : string,
+    modèle :string,
+    marque : string,
+    prix : integer,
+    configuration => La_configuration
+    ) avec tout les attributs NOT NULL
+
+Etant donnée que l'on a supposé le numero de série unique, alors il détermine tout les autres attributs :
+numero de serie -> nature
+numero de serie -> type
+numero de serie -> modèle
+numero de serie -> marque
+numero de serie -> prix
+
+Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est donc numero de série, c'est la clé primaire et la relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Voici la relation L_intervention : 
+
+L_intervention (
+    #numero : integer,
+    prix : integer,
+    dtIntervention : date,
+    dtPanne: date,
+    description : string,
+    numero_equip => Equipement,
+    technicien => Technicien,
+    Unite => Unite_de_gestion,
+    ) avec numero, dtIntervention, dtPanne, description, num_equip, technicien et Unite NOT NULL
+
+Le numéro de l'intervention va permettre de différencier toutes les interventions, il détermine donc tout les autres attributs :
+numero -> prix
+numero -> dtIntervention
+numero -> dtPanne
+numero -> description
+numero -> numero_equip
+numero -> technicien
+numero -> Unite
+
+Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est donc numero, c'est la clé primaire et la relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Voici la relation Technicien :
+
+Technicien (
+    #id : integer,
+    nom : string,
+    prénom : string,
+    numero_de_telephone : integer,
+    fournisseur => Fournisseur,
+    ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
+
