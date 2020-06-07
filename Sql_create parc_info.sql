@@ -65,7 +65,7 @@ CREATE TABLE L_intervention (
     Unite VARCHAR,
     FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom),
     FOREIGN KEY (numero_equip) REFERENCES Equipement(numero_de_serie),
-    FOREIGN KEY (technicien) REFERENCES Technicien(id),
+    FOREIGN KEY (technicien) REFERENCES Technicien(numero_de_telephone),
     PRIMARY KEY (numero)
     );
 
