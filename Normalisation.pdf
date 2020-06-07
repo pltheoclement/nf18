@@ -114,10 +114,10 @@ adresse_e_mail -> nom
 adresse_e_mail -> numero_de_telephone
 adresse_e_mail -> code
 
-Le code étant unique, il détermine les autres attributs, de plus
-
-
-
+Le code, le numéro de téléphone et l'adresse e-mail étant uniques, ils déterminent les autres attributs, ce sont donc 3 clés candidates, on choisit code comme clé primaire, notre relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
 
 
 Voici la relation La_localite :
@@ -151,3 +151,45 @@ Le_contrat_de_maintenance (
     dtSignature : date,
     fournisseur => Fournisseur,
     ) avec tout les attributs NOT NULL
+
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre-eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, nos DFs sont donc :
+id -> mode_de_paiement
+id -> montant
+id -> dtSignature
+id -> fournisseur
+
+On a bien une relation en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Voici la relation Unite_de_gestion : 
+Unite_de_gestion (
+    #nom : string,
+    nombre_de_membres : integer,
+    )  avec nom et nombre_de_membres NOT NULL
+
+Ici notre seule DF est : 
+nom -> nombre_de_membres
+
+nom est donc notre seule clé candidate et donc la clé primaire, de plus la relation est en 3NF car : 
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Enfin voici la relation Affectation :
+Affectation (
+    dtAffectation : date,
+    #configuration => La_configuration,
+    #unite => Unite_de_gestion,
+    ) avec dtAffectation, configuration et Unite NOT NULL
+
+Dans cette relation notre seule DF est :
+(configuration,unite) -> dtAffectation
+
+On a donc (configuration,unite) comme clé candidate et clé primaire, et notre relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
