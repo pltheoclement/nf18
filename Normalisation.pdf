@@ -62,4 +62,14 @@ Technicien (
     numero_de_telephone : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
+    
+Voici les dépendances fonctionnelles :
+id -> nom
+id -> prénom
+id -> numero_de_telephone
+id -> fournisseur
+numero_de_telephone -> nom
+numero_de_telephone -> prénom
+numero_de_telephone ->
+
 
