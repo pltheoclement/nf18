@@ -56,20 +56,98 @@ Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est d
 Voici la relation Technicien :
 
 Technicien (
-    #id : integer,
     nom : string,
     prénom : string,
-    numero_de_telephone : integer,
+    #numero_de_telephone : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
     
 Voici les dépendances fonctionnelles :
-id -> nom
-id -> prénom
-id -> numero_de_telephone
-id -> fournisseur
 numero_de_telephone -> nom
 numero_de_telephone -> prénom
-numero_de_telephone ->
+numero_de_telephone -> id
+numero_de_telephone -> fournisseur
+
+Le numéro de telephone est unique et détermine donc les autres attributs qui eux n'ont pas de DFE envers les attributs. Numero_de_telephone est donc la seule clé candidate, donc la clé primaire et la relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
 
 
+Voici la relation La_configuration :
+
+La_configuration (
+    #id : integer,
+    dtAchat : date,
+    fournisseur => Fournisseur,
+    contrat => Le_contrat_de_maintenance
+    ) avec dtAchat et fournisseur NOT NULL
+
+Dans cette relation, aucun des attributs initiaux n'ont de DFE entre eux, on a donc ajouté une clé artificielle (id) qui servira de clé primaire, les DFE sont donc :
+id-> dtAchat
+id-> fournisseur
+id->contrat
+
+La relation se trouve être en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Voici la relation Le_fournisseur :
+
+Le_fournisseur (
+    #code : integer,
+    nom : string,
+    numero_de_telephone : integer,
+    adresse_e_mail : string,
+    ) avec tout les attributs NOT NULL
+
+Voici les DFs :
+code -> nom
+code -> numero_de_telephone
+code -> adresse_e_mail
+numero_de_telephone -> nom
+numero_de_telephone -> adresse_e_mail
+numero_de_telephone -> code
+adresse_e_mail -> nom
+adresse_e_mail -> numero_de_telephone
+adresse_e_mail -> code
+
+Le code étant unique, il détermine les autres attributs, de plus
+
+
+
+
+
+Voici la relation La_localite :
+La_localite (
+    #id : integer,
+    numero : integer,
+    rue : string,
+    code_postal : integer,
+    nom_de_ville : string,
+    fournisseur => Fournisseur
+    ) avec tout les attributs NOT NULL
+
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre-eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, et nos DFs sont donc :
+id -> numero
+id -> rue 
+id -> code_postal
+id -> nom_de_ville
+id -> fournisseur
+
+Notre relation est en 3NF car :
+-tout les attributs sont atomiques et il y a une clé
+-tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
+-tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
+
+
+Voici la relation Le_contrat_de_maintenance :
+Le_contrat_de_maintenance (
+    #id : integer,
+    mode_de_paiement : {especes,carte_bleue,chèque,virement),
+    montant : integer,
+    dtSignature : date,
+    fournisseur => Fournisseur,
+    ) avec tout les attributs NOT NULL
