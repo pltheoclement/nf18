@@ -24,14 +24,13 @@ L_intervention (
 Ici le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
 Technicien (
-    #id : integer,
     nom : string,
     prénom : string,
-    numero_de_telephone : integer,
+    #numero_de_telephone : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
     
-Pour les techniciens, on créer un id car il se peut que des techniciens aient en commun des attributs de la classe. L'id est donc la clé primaire pour permettre les différenier.
+Pour les techniciens, le numero_de_telephone est unique et c'est donc la clé primaire pour permettre les différenier.
 
 La_configuration (
     #id : integer,
