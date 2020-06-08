@@ -30,7 +30,7 @@ CREATE TABLE La_configuration (
 CREATE TABLE Unite_de_gestion (
     nom_u  VARCHAR,
     nombre_de_membres INTEGER NOT NULL,
-    PRIMARY KEY (nom)
+    PRIMARY KEY (nom_u)
     );
 
 CREATE TABLE Equipement (
