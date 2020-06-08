@@ -51,7 +51,7 @@ CREATE TABLE Technicien (
     numero_de_telephone_t INTEGER NOT NULL,
     fournisseur INTEGER,
     FOREIGN KEY (fournisseur) REFERENCES Le_Fournisseur(code),
-    PRIMARY KEY (numero_de_telephone)
+    PRIMARY KEY (numero_de_telephone_t)
     );
 
 CREATE TABLE L_intervention (
