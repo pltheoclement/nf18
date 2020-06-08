@@ -8,7 +8,7 @@ Equipement (
     type : string,
     modèle :string,
     marque : string,
-    prix : integer,
+    prix_e : integer,
     configuration => La_configuration
     ) avec tout les attributs NOT NULL
 
@@ -17,7 +17,7 @@ numero de serie -> nature
 numero de serie -> type
 numero de serie -> modèle
 numero de serie -> marque
-numero de serie -> prix
+numero de serie -> prix_e
 numero de serie -> configuration
 
 Il n'y a pas d'autres dépendances fonctionnelles entre les autres attributs, la seule clé candidate est donc numero de série, c'est la clé primaire et la relation est en 3NF car :
@@ -30,7 +30,7 @@ Voici la relation L_intervention :
 
 L_intervention (
     #numero : integer,
-    prix : integer,
+    prix_i : integer,
     dtIntervention : date,
     dtPanne: date,
     description : string,
@@ -40,7 +40,7 @@ L_intervention (
     ) avec numero, dtIntervention, dtPanne, description, num_equip, technicien et Unite NOT NULL
 
 Le numéro de l'intervention va permettre de différencier toutes les interventions, il détermine donc tout les autres attributs :
-numero -> prix
+numero -> prix_i
 numero -> dtIntervention
 numero -> dtPanne
 numero -> description
