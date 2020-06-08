@@ -7,19 +7,16 @@ class Equipement {
   type : varchar
   modele : varchar
   marque : varchar
-  prix : numeric
-}
-
-class Le_ticket {
-  numero : numeric : KEY
-  dtPanne : date
-  description : varchar
+  prix_e : numeric
 }
 
 
 class L_intervention {
   numero : numeric : KEY
-  prix : numeric : CAN BE NULL
+  prix_i : numeric : CAN BE NULL
+  dateIntervention : date
+  dtPanne : date
+  description : varchar
 }
 
 class Technicien {
@@ -65,24 +62,21 @@ class Affectation {
   dtAffectation : date
 }
 
-class dateIntervention {
-  dateIntervention : date
-}
+
 
 Le_fournisseur "1" -- "1..n" Technicien : travaille pour <
 L_intervention "0..n" --- "1" Technicien : intervient <
-La_configuration "0..n" - "1..n" Unite_de_gestion
+La_configuration "0..n" -- "1..n" Unite_de_gestion
 (La_configuration,Unite_de_gestion) . Affectation
-L_intervention "0..n" - "1..n" Equipement
 Le_contrat_de_maintenance "0..1" -- "0..n" La_configuration : concerne >
 Le_fournisseur "1" --- "0..n" La_configuration : propose >
 Equipement "1..n" - "1" La_configuration : constitue >
 La_localite "1..n" --- "1" Le_fournisseur : se trouve a <
 Le_contrat_de_maintenance "0..n" --- "1" Le_fournisseur  : effectue <
-Unite_de_gestion "1" --- "0..n" Le_ticket : redige >
-Equipement "1" -- "0..n" Le_ticket : concerne <
-L_intervention "1" -- "1" Le_ticket : permet <
-(L_intervention,Equipement) . dateIntervention
+Unite_de_gestion "1" --- "0..n" L_intervention : redige >
+Equipement "1" -- "0..n" L_intervention : concerne <
+
+
 
 note as n1
   On considere que :
