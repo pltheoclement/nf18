@@ -4,7 +4,7 @@ Equipement (
     type : string,
     modèle :string,
     marque : string,
-    prix : integer,
+    prix_e : integer,
     configuration => La_configuration
     ) avec tout les attributs NOT NULL
     
@@ -12,7 +12,7 @@ On va supposer que le prix d'un équipement est un nombre entier, et que le num�
 
 L_intervention (
     #numero : integer,
-    prix : integer,
+    prix_i : integer,
     dtIntervention : date,
     dtPanne: date,
     description : string,
