@@ -57,9 +57,9 @@ Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est d
 Voici la relation Technicien :
 
 Technicien (
-    nom : string,
+    nom_t : string,
     prénom : string,
-    #numero_de_telephone : integer,
+    #numero_de_telephone_t : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
     
@@ -98,8 +98,8 @@ Voici la relation Le_fournisseur :
 
 Le_fournisseur (
     #code : integer,
-    nom : string,
-    numero_de_telephone : integer,
+    nom_f : string,
+    numero_de_telephone_f : integer,
     adresse_e_mail : string,
     ) avec tout les attributs NOT NULL
 
@@ -166,7 +166,7 @@ On a bien une relation en 3NF car :
 
 Voici la relation Unite_de_gestion : 
 Unite_de_gestion (
-    #nom : string,
+    #nom_u : string,
     nombre_de_membres : integer,
     )  avec nom et nombre_de_membres NOT NULL
 
