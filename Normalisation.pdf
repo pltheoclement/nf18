@@ -18,8 +18,9 @@ numero de serie -> type
 numero de serie -> modèle
 numero de serie -> marque
 numero de serie -> prix
+numero de serie -> configuration
 
-Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est donc numero de série, c'est la clé primaire et la relation est en 3NF car :
+Il n'y a pas d'autres dépendances fonctionnelles entre les autres attributs, la seule clé candidate est donc numero de série, c'est la clé primaire et la relation est en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
 -tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
 -tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
@@ -65,10 +66,9 @@ Technicien (
 Voici les dépendances fonctionnelles :
 numero_de_telephone -> nom
 numero_de_telephone -> prénom
-numero_de_telephone -> id
 numero_de_telephone -> fournisseur
 
-Le numéro de telephone est unique et détermine donc les autres attributs qui eux n'ont pas de DFE envers les attributs. Numero_de_telephone est donc la seule clé candidate, donc la clé primaire et la relation est en 3NF car :
+Le numéro de telephone est unique et détermine donc les autres attributs qui eux n'ont pas de DFs envers les attributs. Numero_de_telephone est donc la seule clé candidate, donc la clé primaire et la relation est en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
 -tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
 -tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
@@ -83,7 +83,7 @@ La_configuration (
     contrat => Le_contrat_de_maintenance
     ) avec dtAchat et fournisseur NOT NULL
 
-Dans cette relation, aucun des attributs initiaux n'ont de DFE entre eux, on a donc ajouté une clé artificielle (id) qui servira de clé primaire, les DFE sont donc :
+Dans cette relation, aucun des attributs initiaux n'ont de DFs entre eux, on a donc ajouté une clé artificielle (id) qui servira de clé primaire, les DFE sont donc :
 id-> dtAchat
 id-> fournisseur
 id->contrat
@@ -114,7 +114,7 @@ adresse_e_mail -> nom
 adresse_e_mail -> numero_de_telephone
 adresse_e_mail -> code
 
-Le code, le numéro de téléphone et l'adresse e-mail étant uniques, ils déterminent les autres attributs, ce sont donc 3 clés candidates, on choisit code comme clé primaire, notre relation est en 3NF car :
+Le code, le numéro de téléphone et l'adresse e-mail étant uniques ( on considère qu'il peut y avoir plusieurs fournisseurs du même nom ), ils déterminent les autres attributs, ce sont donc 3 clés candidates, on choisit code comme clé primaire, notre relation est en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
 -tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
 -tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
@@ -130,7 +130,7 @@ La_localite (
     fournisseur => Fournisseur
     ) avec tout les attributs NOT NULL
 
-Dans cette relation, les attributs initiaux ne forment pas de DFs entre-eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, et nos DFs sont donc :
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, et nos DFs sont donc :
 id -> numero
 id -> rue 
 id -> code_postal
@@ -152,7 +152,7 @@ Le_contrat_de_maintenance (
     fournisseur => Fournisseur,
     ) avec tout les attributs NOT NULL
 
-Dans cette relation, les attributs initiaux ne forment pas de DFs entre-eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, nos DFs sont donc :
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, nos DFs sont donc :
 id -> mode_de_paiement
 id -> montant
 id -> dtSignature
