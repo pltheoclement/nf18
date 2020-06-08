@@ -39,7 +39,7 @@ CREATE TABLE Equipement (
     type  VARCHAR NOT NULL,
     modele VARCHAR NOT NULL,
     marque  VARCHAR NOT NULL,
-    prix  integer NOT NULL,
+    prix_e  integer NOT NULL,
     configuration INTEGER,
     FOREIGN KEY (configuration) REFERENCES La_configuration(id),
     PRIMARY KEY (numero_de_serie)
@@ -56,7 +56,7 @@ CREATE TABLE Technicien (
 
 CREATE TABLE L_intervention (
     numero  SERIAL,
-    prix  integer CHECK (prix >= 0),
+    prix_i  integer CHECK (prix >= 0),
     dtIntervention date NOT NULL,
     dtPanne date NOT NULL,
     description VARCHAR NOT NULL,
