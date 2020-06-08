@@ -20,9 +20,9 @@ class L_intervention {
 }
 
 class Technicien {
-  nom : varchar
+  nom_t : varchar
   prenom : varchar
-  numero_de_telephone : nuemric
+  numero_de_telephone_t : nuemric
 }
 
 class La_configuration {
@@ -32,8 +32,8 @@ class La_configuration {
 
 class Le_fournisseur {
   code : numeric : KEY
-  nom : varchar
-  numero_de_telephone : numeric
+  nom_f : varchar
+  numero_de_telephone_f : numeric
   adresse_e_mail : varchar
 }
 
@@ -53,7 +53,7 @@ class Le_contrat_de_maintenance {
 
 
 class Unite_de_gestion {
- nom : varchar : KEY
+ nom_u : varchar : KEY
  nombre de membres : numeric
 }
 
