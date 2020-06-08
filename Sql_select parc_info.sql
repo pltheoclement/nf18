@@ -17,4 +17,4 @@ SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=4
 
 SELECT * FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
 
-SELECT * FROM Le_fournisseur INNER JOIN Technicien ON Le_fournisseur.code =Technicien.fournisseur
+SELECT * FROM Le_fournisseur INNER JOIN Technicien ON Le_fournisseur.code =Technicien.fournisseur WHERE Le_fournisseur.nom_f ='LDLC PRO'
