@@ -29,10 +29,10 @@
  INSERT INTO Technicien (nom, prenom, numero_de_telephone,fournisseur) VALUES ('clement','douale',0616456430,20);
  INSERT INTO Technicien (nom, prenom, numero_de_telephone,fournisseur) VALUES ('matteo','rengard',0625458563,2455);
  
- INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (1,30,'20-05-2020','5-05-2020','ecran Samsung ne démarre plus',48,0616456430,'Mercure');
+ INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (1,0,'20-05-2020','5-05-2020','ecran Samsung ne démarre plus',48,0616456430,'Mercure');
  INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (2,30,'12-04-2020','29-03-2020','probleme de carte reseau sur ordinateur Asus',1,0625458563,'Terre');
- INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (3,30,'9-08-2019','04-08-2019','blue screen sur ordinateur Macbook PRO',142,0645654512,'Terre');
- INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (4,30,'23-01-2020','1-01-2020','imprimante Canon en panne',412,0642854512,'Venus');
+ INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (3,42,'9-08-2019','04-08-2019','blue screen sur ordinateur Macbook PRO',142,0645654512,'Terre');
+ INSERT INTO L_intervention (numero, prix_i, dtIntervention, dtPanne, description, numero_equip, technicien, Unite) VALUES (4,120,'23-01-2020','1-01-2020','imprimante Canon en panne',412,0642854512,'Venus');
 
  INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (1,24,'rue georges pompidou',60200,'Compiègne',20);
  INSERT INTO La_localite (id, numero, rue, code_postal, nom_de_ville, fournisseur) VALUES (2,112,'rue de chérisy',62156,'Vis-en-artois',20);
