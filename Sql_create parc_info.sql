@@ -1,7 +1,7 @@
 CREATE TABLE Le_fournisseur (
     code  INTEGER,
-    nom  VARCHAR NOT NULL,
-    numero_de_telephone  INTEGER NOT NULL,
+    nom_f  VARCHAR NOT NULL,
+    numero_de_telephone_f  INTEGER NOT NULL,
     adresse_e_mail  VARCHAR NOT NULL,
     PRIMARY KEY (code)
     );
@@ -28,7 +28,7 @@ CREATE TABLE La_configuration (
 
 
 CREATE TABLE Unite_de_gestion (
-    nom  VARCHAR,
+    nom_u  VARCHAR,
     nombre_de_membres INTEGER NOT NULL,
     PRIMARY KEY (nom)
     );
@@ -46,9 +46,9 @@ CREATE TABLE Equipement (
     );
 
 CREATE TABLE Technicien (
-    nom  VARCHAR NOT NULL,
+    nom_t  VARCHAR NOT NULL,
     prenom  VARCHAR NOT NULL,
-    numero_de_telephone INTEGER NOT NULL,
+    numero_de_telephone_t INTEGER NOT NULL,
     fournisseur INTEGER,
     FOREIGN KEY (fournisseur) REFERENCES Le_Fournisseur(code),
     PRIMARY KEY (numero_de_telephone)
@@ -63,9 +63,9 @@ CREATE TABLE L_intervention (
     numero_equip INTEGER NOT NULL,
     technicien INTEGER,
     Unite VARCHAR,
-    FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom),
+    FOREIGN KEY (Unite) REFERENCES Unite_de_gestion(nom_u),
     FOREIGN KEY (numero_equip) REFERENCES Equipement(numero_de_serie),
-    FOREIGN KEY (technicien) REFERENCES Technicien(numero_de_telephone),
+    FOREIGN KEY (technicien) REFERENCES Technicien(numero_de_telephone_t),
     PRIMARY KEY (numero)
     );
 
@@ -85,7 +85,7 @@ CREATE TABLE Affectation (
     configuration INTEGER,
     unite VARCHAR,
     FOREIGN KEY (configuration) REFERENCES La_configuration(id),
-    FOREIGN KEY (unite) REFERENCES Unite_de_gestion(nom),
+    FOREIGN KEY (unite) REFERENCES Unite_de_gestion(nom_u),
     PRIMARY KEY (configuration,unite)
     );
     
