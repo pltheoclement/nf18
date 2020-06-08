@@ -24,9 +24,9 @@ L_intervention (
 Ici le numéro de l'intervention va permettre de différencier les différentes interventions , il est unique et c'est donc la clé primaire.
 
 Technicien (
-    nom : string,
+    nom_t : string,
     prénom : string,
-    #numero_de_telephone : integer,
+    #numero_de_telephone_t : integer,
     fournisseur => Fournisseur,
     ) avec nom, prénom, numero_de_telephone et fournisseur NOT NULL
     
@@ -43,8 +43,8 @@ On décide de créer ici aussi un id pour les configurations, c'est la clé prim
 
 Le_fournisseur (
     #code : integer,
-    nom : string,
-    numero_de_telephone : integer,
+    nom_f : string,
+    numero_de_telephone_f : integer,
     adresse_e_mail : string,
     ) avec tout les attributs NOT NULL
     
@@ -72,7 +72,7 @@ Le_contrat_de_maintenance (
 Pour cette classe aussi on choisit d'utiliser un id en tant que clé primaire pour différencier les contrats car il se peut que des contrats de maintenance aient en commun plusieurs des attributs.
     
 Unite_de_gestion (
-    #nom : string,
+    #nom_u : string,
     nombre_de_membres : integer,
     )  avec nom et nombre_de_membres NOT NULL
     
