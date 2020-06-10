@@ -9,7 +9,7 @@
  
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,'02-02-2017',235,4);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,'01-03-2016',20,2);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2018',2455,''');
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2018',2455,'');
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'20-08-2019',235,'');
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (5,'01-03-2015',2455,1);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (6,'15-04-2016',235,3);
@@ -51,6 +51,9 @@
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('4-02-2019',3,'Terre');
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('18-05-2019',2,'Venus');
  INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2019',1,'Terre');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2017',5,'Terre');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-01-2018',6,'Terre');
+ INSERT INTO Affectation (dtAffectation,configuration,unite) VALUES ('10-05-2017',7,'Mars');
 
  
     
