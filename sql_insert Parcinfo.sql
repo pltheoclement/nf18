@@ -9,11 +9,11 @@
  
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (1,'02-02-2017',235,4);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (2,'01-03-2016',20,2);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2018',2455,'');
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'20-08-2019',235,'');
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (3,'23-07-2018',2455,NULL);
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (4,'20-08-2019',235,NULL);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (5,'01-03-2015',2455,1);
  INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (6,'15-04-2016',235,3);
- INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (7,'24-09-2019',235,'');
+ INSERT INTO La_configuration (id,dtAchat,fournisseur,contrat) VALUES (7,'24-09-2019',235,NULL);
  
  INSERT INTO Unite_de_gestion (nom_u, nombre_de_membres) VALUES ('Terre',5);
  INSERT INTO Unite_de_gestion (nom_u, nombre_de_membres) VALUES ('Mercure',7);
@@ -26,9 +26,9 @@
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (142,'ordianteur','bureautique', 'Macbook PRO', 'Apple', 1500,3);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (45,'clavier','mecanique', 'CK550', 'Cooler Master', 70,1);
  INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (48,'ecran','LCD', 'S24D330', 'Samsung', 130,4);
- INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (1,'ordianteur','bureautique', 'X751B', 'Asus', 985,5);
- INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (1,'ordianteur','bureautique', 'X751B', 'Asus', 985,6);
- INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (142,'ordianteur','bureautique', 'Macbook PRO', 'Apple', 1500,7);
+ INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (2,'ordianteur','bureautique', 'X751B', 'Asus', 985,5);
+ INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (3,'ordianteur','bureautique', 'X751B', 'Asus', 985,6);
+ INSERT INTO Equipement (numero_de_serie, nature, type, modele, marque, prix_e,configuration) VALUES (143,'ordianteur','bureautique', 'Macbook PRO', 'Apple', 1500,7);
  
  INSERT INTO Technicien (nom_t, prenom, numero_de_telephone_t,fournisseur) VALUES ('thomas','legrand',0645654512,20);
  INSERT INTO Technicien (nom_t, prenom, numero_de_telephone_t,fournisseur) VALUES ('gerard','petit',0642854512,235);
