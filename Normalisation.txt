@@ -1,6 +1,6 @@
 Premièrement, on va déterminer les DFs et les clés de chaque relation : 
 
-<b> Voici la relation Equipement : </b>
+Voici la relation Equipement : 
 
 Equipement (
     #numero de serie : integer,
