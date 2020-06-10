@@ -1,6 +1,6 @@
 Premièrement, on va déterminer les DFs et les clés de chaque relation : 
 
-Voici la relation Equipement :
+<b> Voici la relation Equipement : </b>
 
 Equipement (
     #numero de serie : integer,
@@ -39,16 +39,10 @@ L_intervention (
     Unite => Unite_de_gestion,
     ) avec numero, dtIntervention, dtPanne, description, num_equip, technicien et Unite NOT NULL
 
-Le numéro de l'intervention va permettre de différencier toutes les interventions, il détermine donc tout les autres attributs :
-numero -> prix_i
-numero -> dtIntervention
-numero -> dtPanne
-numero -> description
-numero -> numero_equip
-numero -> technicien
-numero -> Unite
+Nous ne pouvons pas trouver de DFs entre les attributs prix_i, dtIntervention, dtPanne, description, numero_equip, technicien et Unite, nous avons donc ici une relation toute clé, la clé candidate se compose de tout les attributs.
+C'est pourquoi nous faisons appel à une clé artificielle : numero, qui va déterminer tout les autres attributs et servir de clé primaire.
 
-Il n'y a pas d'autres dépendances fonctionnelles, la seule clé candidate est donc numero, c'est la clé primaire et la relation est en 3NF car :
+La relation est en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
 -tout attribut n'appartenant à aucune clé candidate ne dépend pas d'une partie seulement d'une clé candidate
 -tout attribut n'appartenant à aucune clé candidate ne dépend directement que de clés candidates
@@ -83,10 +77,8 @@ La_configuration (
     contrat => Le_contrat_de_maintenance
     ) avec dtAchat et fournisseur NOT NULL
 
-Dans cette relation, aucun des attributs initiaux n'ont de DFs entre eux, on a donc ajouté une clé artificielle (id) qui servira de clé primaire, les DFE sont donc :
-id-> dtAchat
-id-> fournisseur
-id->contrat
+Dans cette relation, aucun des attributs initiaux n'ont de DFs entre eux, on est donc face à une relation toute clé, c'est à dire qu'une clé candidate serait formée de tout les attributs : (dtAchat,fournisseur,contrat).
+On décide donc d'ajouter une clé artificielle id qui va déterminer tout les attributs et qui est sera donc la clé primaire.
 
 La relation se trouve être en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
@@ -130,12 +122,8 @@ La_localite (
     fournisseur => Fournisseur
     ) avec tout les attributs NOT NULL
 
-Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, et nos DFs sont donc :
-id -> numero
-id -> rue 
-id -> code_postal
-id -> nom_de_ville
-id -> fournisseur
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, cette relation est donc toute clé, c'est à dire que tout les attributs ensemble forment une clé candidate.
+On décide donc de créer une clé artificielle id qui servira de clé primaire et qui détermine tout les attributs.
 
 Notre relation est en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
@@ -152,11 +140,8 @@ Le_contrat_de_maintenance (
     fournisseur => Fournisseur,
     ) avec tout les attributs NOT NULL
 
-Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, on a donc ajouté la clé artificielle id qui sera notre clé primaire, nos DFs sont donc :
-id -> mode_de_paiement
-id -> montant
-id -> dtSignature
-id -> fournisseur
+Dans cette relation, les attributs initiaux ne forment pas de DFs entre eux, ce qui veut dire qu'on se trouve en présence d'une relation toute clé, c'est à dire que tout les attributs ensemble forment une clé candidate.
+On choisi donc d'ajouter une clé artificielle id qui nous permettra de déterminer tout les autres attributs et qui sera donc notre clé primaire.
 
 On a bien une relation en 3NF car :
 -tout les attributs sont atomiques et il y a une clé
