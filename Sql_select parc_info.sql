@@ -45,11 +45,11 @@ SELECT * FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_seri
 SELECT numero_equip,type,dtpanne,description FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
 SELECT type,marque,modele,dtpanne,description FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
 
-CREATE VIEW Panne_fréquent (nature,marque,panne_fréquente) AS
-SELECT DISTINCT Equipement.nature as nature, Equipement.marque as marque , L_intervention.description as type_de_panne
-FROM Equipement, L_intervention
-WHERE Equipement.numero_de_serie = L_intervention.numero_equip
-
+CREATE VIEW Panne_type AS
+SELECT equipement.nature,equipement.type, description AS Panne, COUNT (description) as nombredePanne
+FROM L_intervention JOIN equipement ON L_intervention.numero_equip = equipement.numero_de_serie 
+GROUP BY equipement.nature, equipement.type,L_intervention.description
+ORDER BY COUNT(description)
 
 
 
