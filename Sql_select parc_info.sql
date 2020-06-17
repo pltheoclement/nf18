@@ -10,17 +10,48 @@ SELECT SUM(prix_e) as prix_config
 FROM Equipement
 WHERE configuration=1
 
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=2
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=3 
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=4
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=5
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=6
-SELECT SUM(prix_e) as prix_config FROM Equipement WHERE configuration=7
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=2
+
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=3
+
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=4
+
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=5
+
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=6
+
+CREATE VIEW Prix_config AS 
+SELECT SUM(prix_e) as prix_config 
+FROM Equipement
+WHERE configuration=7
 
 SELECT * FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
 
 SELECT numero_equip,type,dtpanne,description FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
 SELECT type,marque,modele,dtpanne,description FROM L_intervention INNER JOIN Equipement ON (Equipement.numero_de_serie=L_intervention.numero_equip)
+
+CREATE VIEW Panne_fréquent (nature,marque,panne_fréquente) AS
+SELECT DISTINCT Equipement.nature as nature, Equipement.marque as marque , L_intervention.description as type_de_panne
+FROM Equipement, L_intervention
+WHERE Equipement.numero_de_serie = L_intervention.numero_equip
+
+
+
 
 SELECT * FROM Le_fournisseur INNER JOIN Technicien ON Le_fournisseur.code =Technicien.fournisseur WHERE Le_fournisseur.nom_f ='LDLC PRO'
 
