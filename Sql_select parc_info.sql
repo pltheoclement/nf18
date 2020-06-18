@@ -10,7 +10,7 @@ FROM La_configuration
 ORDER BY date_garantie_restant
 
 
-Création de vue pour savoir le prix d'une configuration :
+Création de vue pour savoir le prix d une configuration :
 
 CREATE VIEW Prix_config AS 
 SELECT SUM(prix_e) as prix_config 
