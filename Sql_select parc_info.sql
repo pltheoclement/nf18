@@ -2,7 +2,7 @@ Les configurations en fonction des équipements :
 
 SELECT * FROM La_configuration INNER JOIN Equipement ON (Equipement.configuration=La_configuration.id) ORDER BY configuration
 
-Vue pour savoir le temps restant en garantie d'une configuration :
+Vue pour savoir le temps restant en garantie d une configuration :
 
 CREATE VIEW Garantie (id,date_garantie_restant) AS
 SELECT La_configuration.id as id , ((dtAchat + integer '1095')- CURRENT_DATE) as date_garantie_restant
